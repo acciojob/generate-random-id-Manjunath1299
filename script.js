@@ -1,7 +1,14 @@
 function makeid(l) {
-  // write your code here
-}
+  // Define allowed characters for the random string
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
 
-// Do not change the code below.
-const l = prompt("Enter a number.");
-alert(makeid(l));
+  // Generate a random string of length l
+  for (let i = 0; i < l; i++) {
+    // Get a random character index within the character set
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    result += characters.charAt(randomIndex);
+  }
+
+  return result;
+}
